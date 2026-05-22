@@ -1,7 +1,7 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>fan</title>
+    <title>Fan Project </title>
     <style>
         *{
             margin:0;
@@ -9,39 +9,50 @@
             box-sizing:border-box;
         }
         body{
-            background:pink;
             height:100vh;
+            width:100vw;
             display:grid;
             place-content:center;
+            background:#0f2027; 
         }
-        div{
-            background-color:white;
-            padding:50px;
+        div {
             width:350px;
-            text-align:center;
+            height:400px;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            background:white;
             border-radius:20px;
         }
-        img{
-            width:250px;
-            margin-bottom:30px;
+        .blades{
+            width:390px;
+            position:absolute;
+            animation:rotate 0.2s linear infinite;
+            margin-bottom :120px;
+        }
+        .fan {
+            width:300px;
+            position:absolute;
         }
         @keyframes rotate{
-            0%{transform:rotate(0deg);}
-            100%{transform:rotate(360deg);}
+
+            0%{
+                transform:rotate(0deg);
+            }
+
+            100%{
+                transform:rotate(360deg);
+            }
+
         }
-        .active{
-            animation:rotate 0.4s linear infinite;
-        }
+
     </style>
-  </head>
-    <body>
-        <div>
-           <img id="fan"src="fan.jpeg" alt"image not found" >
-        </div>
-        
-        <script>
-           let fan = document .getElementById('fan');
-            fan.classList.add('active');
-        </script>
-     </body>
+</head>
+<body>
+    <div>
+        <img src="blade.png" class="blades">
+        <!-- fan body image -->
+        <img src="fan.png" class="fan">
+    </div>
+</body>
 </html>
